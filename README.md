@@ -1,6 +1,6 @@
 # DeluluReviews
 
-## Idea descrition
+## Idea description
 Books , movies and drama reviews application.
 
 #### Logo:
