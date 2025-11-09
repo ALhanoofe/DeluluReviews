@@ -7,10 +7,10 @@ Books , movies and drama reviews application.
 ![App Logo](https://i.imgur.com/JbuPjw4.jpeg)
 
 #### Slogan:
-Because Every Story Deserves a Delulu Take.
-Your Fantasy. Your Review. Your Delulu World.
-When Delulu meets the page, emotions take center stage.
-When Delulu meets the mind, reality’s left behind.
+* Because Every Story Deserves a Delulu Take.
+* Your Fantasy. Your Review. Your Delulu World.
+* When Delulu meets the page, emotions take center stage.
+* When Delulu meets the mind, reality’s left behind.
 
 ## App ERD
 ![App ERD](https://i.imgur.com/QetICxI.jpeg)
@@ -23,8 +23,11 @@ When Delulu meets the mind, reality’s left behind.
 
 ## Unsolved problems
 - [ ] problem 1
-- [ ] problems 2
-- [ ] problems 3
+- [ ] problem 2
+- [ ] problem 3
+*  problem 1
+*  problem 2
 
 ## Future enhancements
 
+## ***Credits***
