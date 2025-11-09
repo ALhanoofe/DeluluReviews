@@ -1,10 +1,10 @@
 # DeluluReviews
 
-## Idea descrition
+## Idea description
 Books , movies and drama reviews application.
 
 #### Logo:
-![App Logo](https://i.imgur.com/JbuPjw4.jpeg)
+![App Logo](https://i.imgur.com/6U0FLFK.png)
 
 #### Slogan:
  Because Every Story Deserves a Delulu Take.
@@ -22,8 +22,7 @@ Books , movies and drama reviews application.
 - [ ] problem 1
 - [ ] problem 2
 - [ ] problem 3
-*  problem 1
-*  problem 2
+
 
 ## Future enhancements
 
