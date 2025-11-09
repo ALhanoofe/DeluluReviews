@@ -7,7 +7,7 @@ Books , movies and drama reviews application.
 ![App Logo](https://i.imgur.com/JbuPjw4.jpeg)
 
 #### Slogan:
-* Because Every Story Deserves a Delulu Take.
+ Because Every Story Deserves a Delulu Take.
 
 ## App ERD
 ![App ERD](https://i.imgur.com/QetICxI.jpeg)
