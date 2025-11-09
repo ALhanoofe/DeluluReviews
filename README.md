@@ -22,8 +22,7 @@ Books , movies and drama reviews application.
 - [ ] problem 1
 - [ ] problem 2
 - [ ] problem 3
-*  problem 1
-*  problem 2
+
 
 ## Future enhancements
 
