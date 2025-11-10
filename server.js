@@ -23,9 +23,12 @@ app.use('/assets', express.static(__dirname + '/assets'));
 
 
 app.get('/', async (req, res) => {
-  res.render('index.ejs');
+  res.render('auth/sign-in.ejs');
 });
 
+app.get('/sign-up.ejs', async (req, res) => {
+  res.render('auth/sign-up.ejs');
+});
 
 app.listen(3000, () => {
   console.log('listening on port 3000');
