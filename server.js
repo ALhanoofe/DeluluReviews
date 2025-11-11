@@ -9,6 +9,7 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const postControllers = require('./controllers/post.js');
 
+
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.once("connected", () => {
   console.log("connected to mongo");
