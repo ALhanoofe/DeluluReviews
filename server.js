@@ -10,6 +10,7 @@ const morgan = require('morgan');
 const session = require('express-session');
 const postControllers = require('./controllers/post.js');
 const authRoutes = require('./Routes/auth');
+const profileRouter = require ("./Routes/profile.js")
 
 
 
@@ -33,6 +34,7 @@ app.use(
 );
 
 app.use('/auth', authRoutes);
+app.use('/profile',profileRouter);
 
 
 
