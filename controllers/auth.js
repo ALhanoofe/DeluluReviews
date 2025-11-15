@@ -22,6 +22,7 @@ exports.auth_signup_post = async (req, res) => {
   //create the user
   const user = await User.create(req.body)
   res.send(`thanks for signing up ${user.username}`)
+  // res.render('../views/index.ejs')
 }
 
 exports.auth_signin_get = async (req, res) => {
@@ -45,7 +46,7 @@ exports.auth_signin_post = async (req, res) => {
     username: userInDatabase.username,
     _id: userInDatabase._id,
   }
-  res.redirect("/")
+  res.render("../views/index.ejs")
 }
 
 exports.auth_signout_get = async (req, res) => {

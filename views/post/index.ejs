@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts</title>
+</head>
+<body>
+    <%- include('../partials/_navbar') %>
+
+      <h1><%= category %></h1>
+
+<% posts.forEach(post => { %>
+  <% if (post.category === 'book') { %>
+         
+
+    <div class="post-div">
+
+      <img src="<%= post.Image %>" alt="<%= post.name %>" width="150">
+      <h3>Name: <%= post.name %></h3>
+      <h3>Author: <%= post.author %></h3>
+      <h3>Release Date: <%= post.releaseDate %></h3>
+      <h3>Cast: <%= post.cast %></h3>
+      <h3>Rating: <%= post.rate %></h3>
+      <p>Review: <%= post.review %></p>
+      <% if (post.postOwner._id.equals(user._id)) { %>
+        <div class="owner-container">
+          <p>Owned by you</p>
+          <a href="/post/<%= post._id %>/edit">Edit</a>
+          <form
+            action="/post/<%= post._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit">Delete Post</button>
+          </form>
+        </div>
+        <% } else { %>
+        <p>Owned by <%= task.owner.username %></p>
+        <% } %>
+    </div>
+  <% } %>
+<% }) %>
+
+<% posts.forEach(post => { %>
+  <% if (post.category === 'drama') { %>
+    <div class="post-div">
+
+      <img src="<%= post.Image %>" alt="<%= post.name %>" width="150">
+      <h3>Name: <%= post.name %></h3>
+      <h3>Author: <%= post.author %></h3>
+      <h3>Release Date: <%= post.releaseDate %></h3>
+      <h3>Post Owner: <%= post.postOwner.username %></h3>
+      <h3>Cast: <%= post.cast %></h3>
+      <h3>Rating: <%= post.rate %></h3>
+      <p>Review: <%= post.review %></p>
+       <% if (post.postOwner._id.equals(user._id)) { %>
+        <div class="owner-container">
+          <p>Owned by you</p>
+          <a href="/post/<%= post._id %>/edit">Edit</a>
+          <form
+            action="/post/<%= post._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit">Delete Post</button>
+          </form>
+        </div>
+        <% } else { %>
+        <p>Owned by <%= task.owner.username %></p>
+        <% } %>
+    </div>
+  <% } %>
+<% }) %>
+
+
+
+<% posts.forEach(post => { %>
+  <% if (post.category === 'movie') { %>
+    <div class="post-div">
+      <img src="<%= post.Image %>" alt="<%= post.name %>" width="150">
+      <h3>Name: <%= post.name %></h3>
+      <h3>Author: <%= post.author %></h3>
+      <h3>Release Date: <%= post.releaseDate %></h3>
+      <h3>Post Owner: <%= post.postOwner.username %></h3>
+      <h3>Cast: <%= post.cast %></h3>
+      <h3>Rating: <%= post.rate %></h3>
+      <p>Review: <%= post.review %></p>
+    </div>
+     <% if (post.postOwner._id.equals(user._id)) { %>
+        <div class="owner-container">
+          <p>Owned by you</p>
+          <a href="/post/<%= post._id %>/edit">Edit</a>
+          <form
+            action="/post/<%= post._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit">Delete Post</button>
+          </form>
+        </div>
+        <% } else { %>
+        <p>Owned by <%= task.owner.username %></p>
+        <% } %>
+  <% } %>
+<% }) %>
+
+</body>
+</html>

@@ -7,7 +7,14 @@ const mongoose = require('mongoose');
 const app = express();
 const methodOverride = require('method-override');
 const morgan = require('morgan');
+const session = require('express-session');
 const postControllers = require('./controllers/post.js');
+const passUserToView = require("./middleware/pass-user-to-view")
+const isSignedIn = require("./middleware/is-signed-in")
+
+
+
+
 
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.once("connected", () => {
@@ -19,6 +26,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use('/assets', express.static(__dirname + '/assets'));
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true
+  })
+);
+
+app.use(passUserToView)
+
+const authRoutes = require('./Routes/auth');
+const postRouter = require("./Routes/post.js")
+
+app.use('/auth', authRoutes);
+app.use('/post', isSignedIn, postRouter);
 
 
 
