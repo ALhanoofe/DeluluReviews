@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Post</title>
+</head>
+<body>
+  <%- include('../partials/_navbar') %>
+
+<h1 style="text-align:center;">Edit Post</h1>
+
+<form action="/post/<%= post._id %>?_method=PUT" method="POST" >
+  
+  <label for="name">Post Name</label>
+  <input type="text" id="name" name="name" value="<%= post.name %>" required>
+
+  <label for="author">Author</label>
+  <input type="text" id="author" name="author" value="<%= post.author %>">
+
+  <label for="category">Category</label>
+  <select id="category" name="category" required>
+    <option value="book" <%= post.category === 'book' ? 'selected' : '' %>>Book</option>
+    <option value="movie" <%= post.category === 'movie' ? 'selected' : '' %>>Movie</option>
+    <option value="drama" <%= post.category === 'drama' ? 'selected' : '' %>>Drama</option>
+  </select>
+
+  <label for="language">Language</label>
+  <input type="text" id="language" name="language" value="<%= post.language %>" required>
+  
+  <label for="type">Type</label>
+  <select id="type" name="type" required>
+    <option value="fiction" <%= post.type === 'fiction' ? 'selected' : '' %>>Fiction</option>
+    <option value="non-fiction" <%= post.type === 'non-fiction' ? 'selected' : '' %>>Non-fiction</option>
+    <option value="thriller" <%= post.type === 'thriller' ? 'selected' : '' %>>Thriller</option>
+    <option value="romance" <%= post.type === 'romance' ? 'selected' : '' %>>Romance</option>
+    <option value="sci-fi" <%= post.type === 'sci-fi' ? 'selected' : '' %>>Sci-Fi</option>
+    <option value="fantasy" <%= post.type === 'fantasy' ? 'selected' : '' %>>Fantasy</option>
+    <option value="biography" <%= post.type === 'biography' ? 'selected' : '' %>>Biography</option>
+    <option value="history" <%= post.type === 'history' ? 'selected' : '' %>>History</option>
+    <option value="self-help" <%= post.type === 'self-help' ? 'selected' : '' %>>Self-help</option>
+    <option value="health" <%= post.type === 'health' ? 'selected' : '' %>>Health</option>
+    <option value="horror" <%= post.type === 'horror' ? 'selected' : '' %>>Horror</option>
+    <option value="comedy" <%= post.type === 'comedy' ? 'selected' : '' %>>Comedy</option>
+    <option value="action" <%= post.type === 'action' ? 'selected' : '' %>>Action</option>
+    <option value="drama" <%= post.type === 'drama' ? 'selected' : '' %>>Drama</option>
+    <option value="documentary" <%= post.type === 'documentary' ? 'selected' : '' %>>Documentary</option>
+    <option value="animation" <%= post.type === 'animation' ? 'selected' : '' %>>Animation</option>
+  </select>
+
+  <label for="releaseDate">Release Date</label>
+  <input type="date" id="releaseDate" name="releaseDate" value="<%= post.releaseDate.toISOString().split('T')[0] %>" required>
+
+  <label for="Image">Upload Image</label>
+  <input type="text" id="Image" name="Image" required  value="<%= post.Image %>">
+  <p>Current Image: <img src="<%= post.Image %>" alt="<%= post.name %>" width="100"></p>
+
+  <label for="cast">Cast</label>
+  <input type="text" id="cast" name="cast" value="<%= post.cast %>">
+
+  <label for="rate">Rating (1-5)</label>
+  <input type="number" id="rate" name="rate" min="1" max="5" value="<%= post.rate %>" required>
+
+  <label for="review">Review</label>
+  <textarea id="review" name="review" rows="5" required><%= post.review %></textarea>
+    
+  <button type="submit">Update Post</button>
+</form>
+
+</body>
+</html>

@@ -9,7 +9,10 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
 const postControllers = require('./controllers/post.js');
-const authRoutes = require('./Routes/auth');
+const passUserToView = require("./middleware/pass-user-to-view")
+const isSignedIn = require("./middleware/is-signed-in")
+
+
 
 
 
@@ -32,7 +35,13 @@ app.use(
   })
 );
 
+app.use(passUserToView)
+
+const authRoutes = require('./Routes/auth');
+const postRouter = require("./Routes/post.js")
+
 app.use('/auth', authRoutes);
+app.use('/post', isSignedIn, postRouter);
 
 
 
