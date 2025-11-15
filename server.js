@@ -16,6 +16,7 @@ const isSignedIn = require("./middleware/is-signed-in")
 
 
 
+
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.once("connected", () => {
   console.log("connected to mongo");
@@ -39,9 +40,10 @@ app.use(passUserToView)
 
 const authRoutes = require('./Routes/auth');
 const postRouter = require("./Routes/post.js")
-
+const profileRouter = requir("./Router/profile.js")
 app.use('/auth', authRoutes);
-app.use('/post', isSignedIn, postRouter);
+app.use('/profile',profileRouter);
+
 
 
 
