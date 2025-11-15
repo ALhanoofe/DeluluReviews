@@ -46,6 +46,8 @@ exports.auth_signin_post = async (req, res) => {
     username: userInDatabase.username,
     _id: userInDatabase._id,
   }
+  req.session.userId = userInDatabase._id;
+
   res.render("../views/index.ejs")
 }
 
