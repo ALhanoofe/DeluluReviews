@@ -27,9 +27,8 @@ const postSchema = new mongoose.Schema({
     min: 1,
     max: 5
   },
-  Image: {
+  image: {
     type: String,
-    required: true,
   },
   review: {
     type: String,
