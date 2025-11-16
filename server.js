@@ -15,8 +15,6 @@ const isSignedIn = require("./middleware/is-signed-in")
 
 
 
-
-
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.once("connected", () => {
   console.log("connected to mongo");
@@ -27,6 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use('/assets', express.static(__dirname + '/assets'));
+
+app.use('/style', express.static(__dirname + '/style'));
 
 app.use(
   session({
@@ -41,9 +41,10 @@ app.use(passUserToView)
 const authRoutes = require('./Routes/auth');
 const postRouter = require("./Routes/post.js")
 const profileRouter = require("./Routes/profile.js")
+
 app.use('/auth', authRoutes);
-app.use('/profile',profileRouter);
-app.use('/post',postRouter)
+app.use('/profile', profileRouter);
+app.use('/post', isSignedIn, postRouter)
 
 
 
@@ -53,6 +54,10 @@ app.get('/', async (req, res) => {
 });
 app.get('/sign-up.ejs', async (req, res) => {
   res.render('auth/sign-up.ejs');
+});
+
+app.get('/home', async (req, res) => {
+  res.render('index.ejs');
 });
 
 
