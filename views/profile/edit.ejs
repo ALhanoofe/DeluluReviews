@@ -1,34 +1,29 @@
 <h1>Edit your profile</h1>
-<form action="/profile/<%= profile._id %>?_method=PUT" method="POST">
-
-
+<form action="/profile/<%= user._id %>?_method=PUT" method="POST">
   <label for="username">Username:</label>
-  <input type="text" name="username" id="username" value="<%= user.username %>" />
+  <input
+    type="text"
+    name="username"
+    id="username"
+    value="<%= user.username %>"
+  />
   <br />
 
   <label for="name">Name:</label>
-  <input type="text" name="name" id="name" value="<%= profile.name %>" />
+  <input type="text" name="name" id="name" value="<%= user.name %>" />
   <br />
 
   <label for="email">Email:</label>
-  <input type="email" name="email" id="email" value="<%= profile.email %>" />
-  <br/>
+  <input type="email" name="email" id="email" value="<%= user.email %>" />
+  <br />
 
   <label for="age">Age:</label>
-  <input type="number" name="age" id="age" value="<%= profile.age %>" />
-  <br />
-
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password" />
-  <br />
-
-  <label for="confirmPassword">Confirm Password:</label>
-  <input type="password" name="confirmPassword" id="confirmPassword" />
+  <input type="number" name="age" id="age" value="<%= user.age %>" />
   <br />
 
   <label for="image">Your profile image:</label>
-  <% if(profile.image){ %>
-    <img src="<%= profile.image %>" alt="Profile Image" width="100" />
+  <% if(user.image){ %>
+  <img src="<%= user.image %>" alt="Profile Image" width="100" />
   <% } %>
   <input type="file" name="image" id="image" />
   <br />
