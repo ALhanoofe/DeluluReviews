@@ -14,20 +14,13 @@ exports.post_create_get = async (req, res) => {
 
 
 exports.post_create_post = async (req, res) => {
-  try {
-    if (req.file) {
-      req.body.image = req.file.filename;
-    }
-
-    req.body.postOwner = req.session.user._id;
-
-    await Post.create(req.body);
-
-    res.redirect('/post/?category=' + req.body.category);
-  } catch (err) {
-    console.log(err);
-    res.send("Error creating post");
+  req.body.postOwner = req.session.user._id;
+  if (req.file) {
+    req.body.image = req.file.filename;
   }
+  await Post.create(req.body);
+  res.redirect('/post/?category=' + req.body.category);
+
 };
 
 exports.post_edit_get = async (req, res) => {
