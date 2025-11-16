@@ -26,6 +26,8 @@ app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use('/assets', express.static(__dirname + '/assets'));
 
+app.use('/style', express.static(__dirname + '/style'));
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
