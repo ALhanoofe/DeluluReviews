@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <h1>Your Profile</h1>
+
+    <img src="<%= user.image %>" width="150" alt="Profile Image" />
+
+    <form action="/profile/edit" method="get">
+      <br />
+
+      <p>Username: <%= user.username %></p>
+      <br />
+
+      <p>Name: <%= user.name %></p>
+      <br />
+
+      <p>Email: <%= user.email %></p>
+      <br />
+
+      <p>Age: <%= user.age %></p>
+      <br />
+
+
+      <button><a href="/<%= user._id %>/edit">Update Profile</a></button>
+    </form>
+  </body>
+</html>

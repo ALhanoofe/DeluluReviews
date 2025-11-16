@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ["Books", "Movies", "Drama"],
+    enum: ["Books", "Movies", "Dramas"],
   },
   releaseDate: {
     type: Date,

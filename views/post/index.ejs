@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Posts</title>
+  <link rel="stylesheet" href="/style/post.css">
 </head>
 <body>
     <%- include('../partials/_navbar') %>
-
       <h1><%= category %></h1>
-
+<div class="main">
+<div class="posts-container">
 <% posts.forEach(post => { %>
-  <% if (post.category === 'book') { %>
-         
-
+  <% if (post.category === 'Books') { %>
     <div class="post-div">
-
-      <img src="<%= post.Image %>" alt="<%= post.name %>" width="150">
+      <img src="<%= post.image %>" alt="<%= post.name %>" width="150">
       <h3>Name: <%= post.name %></h3>
       <h3>Author: <%= post.author %></h3>
       <h3>Release Date: <%= post.releaseDate %></h3>
@@ -36,16 +34,19 @@
         </div>
         <% } else { %>
         <p>Owned by <%= post.postOwner.username %></p>
+        <button class="owner-container"><a href="">View details</a></button>
         <% } %>
     </div>
   <% } %>
 <% }) %>
+</div>
 
+<div class="posts-container">
 <% posts.forEach(post => { %>
-  <% if (post.category === 'drama') { %>
+  <% if (post.category === 'Dramas') { %>
     <div class="post-div">
 
-      <img src="<%= post.Image %>" alt="<%= post.name %>" width="150">
+      <img src="<%= post.image %>" alt="<%= post.name %>" width="150">
       <h3>Name: <%= post.name %></h3>
       <h3>Author: <%= post.author %></h3>
       <h3>Release Date: <%= post.releaseDate %></h3>
@@ -70,13 +71,13 @@
     </div>
   <% } %>
 <% }) %>
+</div>
 
-
-
+<div class="posts-container">
 <% posts.forEach(post => { %>
-  <% if (post.category === 'movie') { %>
+  <% if (post.category === 'Movies') { %>
     <div class="post-div">
-      <img src="<%= post.Image %>" alt="<%= post.name %>" width="150">
+      <img src="<%= post.image %>" alt="<%= post.name %>" width="150">
       <h3>Name: <%= post.name %></h3>
       <h3>Author: <%= post.author %></h3>
       <h3>Release Date: <%= post.releaseDate %></h3>
@@ -101,6 +102,7 @@
         <% } %>
   <% } %>
 <% }) %>
-
+</div>
+  </div>  
 </body>
 </html>
