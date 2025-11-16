@@ -1,0 +1,57 @@
+<%- include('../partials/_navbar.ejs') %>
+  <h1>Add a new Post</h1>
+  <form method="POST" action="/post">
+    <label for="name">Name:</label>
+    <input type="text" name="Name" id="Name" />
+    <br>
+    <label for="author">Author:</label>
+    <input type="text" name="Author" id="Author" />
+    <br>
+    <label for="category">Category:</label>
+    <select name="category" id="category">
+    <option value="movie">movie</option>
+    <option value="book">book</option>
+    <option value="drama">drama</option>
+    </select>
+    <br>
+    <label for="releaseDate">ReleaseDate:</label>
+    <input type="date" name="releaseDate" id="releaseDate" />
+    <br>
+    <label for="language">Language:</label>
+    <input type="text" name="language" id="language" />
+    <br>
+    <label for="rate">Rate:</label>
+    <input type="number" name="rate" id="rate" min="0"  max="5"/>
+    <br>
+    <label for="Image">Image:</label>
+    <input type="image" name="Image" id="Image"/>
+    <br>
+    <label for="review">Review:</label>
+    <input type="text" name="review" id="review"/>
+    <br>
+    <label for="cast">Cast:</label>
+    <input type="text" name="cast" id="cast"/>
+    <br>
+    <label for="type">Type:</label>
+    <select name="type" id="type">
+    <option value="fiction">fiction</option>
+    <option value="non-fiction">non-fiction</option>
+    <option value="thriller">thriller</option>
+    <option value="romance">romance</option>
+    <option value="sci-fi">sci-fi</option>
+    <option value="fantasy">fantasy</option>
+    <option value="biography">biography</option>
+    <option value="history">history</option>
+    <option value="self-help">self-help</option>
+    <option value="health">health</option>
+    <option value="horror">horror</option>
+    <option value="comedy">comedy</option>
+    <option value="action">action</option>
+    <option value="drama">drama</option>
+    <option value="documentary">documentary</option>
+    <option value="animation">animation</option>
+    </select>
+    <br>
+
+    <button type="submit">Add Post</button>
+  </form>
