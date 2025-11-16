@@ -40,11 +40,13 @@ app.use(passUserToView)
 
 const authRoutes = require('./Routes/auth');
 const postRouter = require("./Routes/post.js")
-const profileRouter = requir("./Router/profile.js")
+const profileRouter = require("./Routes/profile.js")
+const commentRouter = require("./Routes/comment")
 
 app.use('/auth', authRoutes);
 app.use('/profile',profileRouter);
-app.use('/post',postRouter)
+app.use('/post',postRouter);
+app.use('/comment',commentRouter)
 
 
 

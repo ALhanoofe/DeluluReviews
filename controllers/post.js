@@ -4,7 +4,8 @@ exports.post_index_get = async (req, res) => {
   const category = req.query.category;
   let posts;
   posts = await Post.find({ category }).populate('postOwner');
-  res.render('post/index.ejs', { posts, category });
+  const comments = await Comment.find().populate("postOwner");
+  res.render('post/index.ejs', { posts, category, comments });
 }
 
 exports.post_create_get = async (req, res) => {
