@@ -29,7 +29,6 @@ const postSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
   },
   review: {
     type: String,

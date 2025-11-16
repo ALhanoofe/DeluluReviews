@@ -15,6 +15,7 @@ const isSignedIn = require("./middleware/is-signed-in")
 
 
 
+
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.once("connected", () => {
   console.log("connected to mongo");
@@ -25,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use('/assets', express.static(__dirname + '/assets'));
-
+app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use('/style', express.static(__dirname + '/style'));
 
 app.use(

@@ -20,9 +20,9 @@
 
   <label for="category">Category</label>
   <select id="category" name="category" required>
-    <option value="book" <%= post.category === 'book' ? 'selected' : '' %>>Book</option>
-    <option value="movie" <%= post.category === 'movie' ? 'selected' : '' %>>Movie</option>
-    <option value="drama" <%= post.category === 'drama' ? 'selected' : '' %>>Drama</option>
+    <option value="Books" <%= post.category === 'Books' ? 'selected' : '' %>>Book</option>
+    <option value="Movies" <%= post.category === 'Movies' ? 'selected' : '' %>>Movie</option>
+    <option value="Dramas" <%= post.category === 'Dramas' ? 'selected' : '' %>>Drama</option>
   </select>
 
   <label for="language">Language</label>
@@ -51,9 +51,9 @@
   <label for="releaseDate">Release Date</label>
   <input type="date" id="releaseDate" name="releaseDate" value="<%= post.releaseDate.toISOString().split('T')[0] %>" required>
 
-  <label for="Image">Upload Image</label>
-  <input type="text" id="Image" name="Image" required  value="<%= post.Image %>">
-  <p>Current Image: <img src="<%= post.Image %>" alt="<%= post.name %>" width="100"></p>
+  <label for="image">Upload Image</label>
+  <input type="file" id="image" name="image" required  value="<%= post.image %>">
+  <p>Current Image: <img src="<%= post.image %>" alt="<%= post.name %>" width="100"></p>
 
   <label for="cast">Cast</label>
   <input type="text" id="cast" name="cast" value="<%= post.cast %>">
