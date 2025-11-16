@@ -25,10 +25,9 @@
       <p>Age: <%= user.age %></p>
       <br />
 
-      <p>Password: <%= user.password %></p>
-      <br />
-
-      <button><a href="/<%= user._id %>/edit">Update Profile</a></button>
+      <button>
+        <a href="/profile/<%= user._id %>/edit">Update Profile</a>
+      </button>
     </form>
   </body>
 </html>

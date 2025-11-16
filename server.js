@@ -40,8 +40,7 @@ app.use(passUserToView)
 
 const authRoutes = require('./Routes/auth');
 const postRouter = require("./Routes/post.js")
-const profileRouter = requir("./Router/profile.js")
-
+const profileRouter = require("./Routes/profile.js")
 app.use('/auth', authRoutes);
 app.use('/profile',profileRouter);
 app.use('/post',postRouter)
@@ -55,6 +54,7 @@ app.get('/', async (req, res) => {
 app.get('/sign-up.ejs', async (req, res) => {
   res.render('auth/sign-up.ejs');
 });
+
 
 
 app.listen(3000, () => {
