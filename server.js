@@ -59,6 +59,7 @@ app.get('/sign-up.ejs', async (req, res) => {
   res.render('auth/sign-up.ejs');
 });
 
+
 app.get('/home', async (req, res) => {
   res.render('index.ejs');
 });
