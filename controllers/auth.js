@@ -13,16 +13,16 @@ exports.auth_signup_post = async (req, res) => {
   if (req.body.password !== req.body.confirmPassword) {
     return res.send("password and confirm password must match")
   }
-
-  //register the user
-  //password encryption
   const hashedPassword = bcrypt.hashSync(req.body.password, 10)
   req.body.password = hashedPassword
 
-  //create the user
+  if (req.file) {
+    req.body.image = req.file.filename;
+  }
   const user = await User.create(req.body)
-  res.send(`thanks for signing up ${user.username}`)
-  // res.render('../views/index.ejs')
+
+  res.redirect('../views/index.ejs' + req.body.category);
+
 }
 
 exports.auth_signin_get = async (req, res) => {
