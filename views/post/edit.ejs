@@ -52,8 +52,8 @@
   <input type="date" id="releaseDate" name="releaseDate" value="<%= post.releaseDate.toISOString().split('T')[0] %>" required>
 
   <label for="image">Upload Image</label>
-  <input type="file" id="image" name="image" required  value="<%= post.image %>">
-  <p>Current Image: <img src="<%= post.image %>" alt="<%= post.name %>" width="100"></p>
+      <img src="/uploads/<%= post.image %>" alt="<%= post.name %>" width="150">
+  <p>Current Image: <img src="/uploads/<%= post.image %>" alt="<%= post.name %>" width="100"></p>
 
   <label for="cast">Cast</label>
   <input type="text" id="cast" name="cast" value="<%= post.cast %>">
