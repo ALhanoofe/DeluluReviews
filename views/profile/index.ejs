@@ -8,9 +8,11 @@
   <body>
     <h1>Your Profile</h1>
 
-    <img src="<%= user.image %>" width="150" alt="Profile Image" />
 
-    <form action="/profile/edit" method="get">
+  <form action="/profile/<%= user._id %>?_method=PUT" method="POST"  enctype="multipart/form-data">
+    
+      <img src="/profiles/<%= user.image %>" width="150" alt="Profile Image" />
+
       <br />
 
       <p>Username: <%= user.username %></p>
@@ -28,6 +30,6 @@
       <button>
         <a href="/profile/<%= user._id %>/edit">Update Profile</a>
       </button>
-    </form>
+  </form>
   </body>
 </html>

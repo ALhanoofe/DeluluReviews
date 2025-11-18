@@ -27,6 +27,8 @@ app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use('/assets', express.static(__dirname + '/assets'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use('/profiles', express.static(__dirname + '/profiles'));
+
 app.use('/style', express.static(__dirname + '/style'));
 
 app.use(
