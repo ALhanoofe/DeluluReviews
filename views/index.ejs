@@ -4,56 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <style>
-    body{
-      color: #AFA4B1;
-    }
-    .books, .movies, .dramas {
-      width: 200px;
-      height: 350px;
-      background-color: rgb(139, 133, 143);
-      border-radius: 30px;
-      padding: 20px;
-      margin: 20px;
-      text-align: center;
-      display: inline-block;
-    }
+  <link rel="stylesheet" href="/style/home.css">
+  <%- include('./partials/_navbar') %>
 
-    p {
-      margin: 15px;
-      font-size: 50px ;
-      font-weight: 700;
-    }
-    button{
-      display: block;
-      height: 50px;
-      width: 200px;
-      border-radius: 20px;
-      border: 0 solid;
-      background-color:  #554a57;
-      color: white;
-      margin: 20px;
-      margin-left: 330px;
-    }
-  </style>
+
 </head>
 <body>
-  <%- include('./partials/_navbar') %>
-  <img src="" alt="">
-  <div class="books">
-    <img src="/assets/book-open-svgrepo-com.svg" alt="books icon" width="100" height="100">
-    <p>Books</p>
-  </div>
-  <div class="movies">
-    <img src="/assets/movie-recorder-svgrepo-com.svg" alt="movie icon" width="100" height="100">
-    <p>Movies</p>
-  </div>
-  <div class="dramas">
-    <img src="/assets/drama-svgrepo-com.svg" alt="drama icon" width="100" height="100">
-    <p>Dramas</p>
+
+  <div class="content-wrapper">
+    <div class="category-card">
+      <img src="/assets/book-open-svgrepo-com.svg" width="120">
+      <p>Books</p>
+    </div>
+
+    <div class="category-card">
+      <img src="/assets/movie-recorder-svgrepo-com.svg" width="120">
+      <p>Movies</p>
+    </div>
+
+    <div class="category-card">
+      <img src="/assets/drama-svgrepo-com.svg" width="120">
+      <p>Dramas</p>
+    </div>
   </div>
 
-  <button> <a href="/post/new">+ add new post</a></button>
+  <a class="add-post-btn" href="/post/new">+ Add New Post</a>
 
 </body>
 </html>
