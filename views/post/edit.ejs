@@ -48,8 +48,7 @@
     <option value="animation" <%= post.type === 'animation' ? 'selected' : '' %>>Animation</option>
   </select>
 
-  <label for="releaseDate">Release Date</label>
-  <input type="date" id="releaseDate" name="releaseDate" value="<%= post.releaseDate.toISOString().split('T')[0] %>" required>
+
 
   <label for="image">Image Update</label>
   <input type="file" id="image" name="image" >
