@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ["Books", "Movies", "Drama"],
+    enum: ["Books", "Movies", "Dramas"],
   },
   releaseDate: {
     type: Date,
@@ -27,9 +27,8 @@ const postSchema = new mongoose.Schema({
     min: 1,
     max: 5
   },
-  Image: {
+  image: {
     type: String,
-    required: true,
   },
   review: {
     type: String,

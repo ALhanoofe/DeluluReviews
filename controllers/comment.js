@@ -1,35 +1,33 @@
-const comment = require("../models/comment");
-const post = require("../models/post");
+const Comment = require("../models/comment");
+const Post = require("../models/post");
 
-
-
+exports.post_index_get = async (req, res) => {
+  const category = req.query.category;
+  let posts;
+  posts = await Post.find({ category }).populate('postOwner');
+  const comments = await Comment.find().populate("postOwner");
+  res.render('comment/index.ejs', { posts, category });
+}
 
 exports.comment_index_get = async (req, res) => {
   const postId = req.params.postId;
-  const comments = await comment.find({post: postId}).populate('postOwner');
-  res.render('post/index.ejs', { comments });
+  const post = await Post.findOne({_id: postId}).populate('postOwner');
+  const comments = await Comment.find({post:postId}).populate('postOwner');
+  res.render('comment/index.ejs', { post, comments });
 
 }
 
 exports.comment_create_post = async (req, res) => {
-  const comment = await comment.create({
+const postId = req.params.postId;
+
+  await Comment.create({
     description: req.body.description,
     postOwner: req.session.user._id,
-    post: req.Params.postId
+    post: req.params.postId
   });
-  res.redirect(`/posts/${req.params.postId}`)
-}
 
-exports.comment_edit_get = async (req,res) => {
-  const comment = await comment.findById(req.params.id);
+  const post = await Post.findOne({_id: postId}).populate('postOwner');
+  const comments = await Comment.find({post:postId}).populate('postOwner');
 
-  res.render('comment/edit.ejs', { comment });
-}
-
-exports.comment_update_put = async (req,res) => {
-  const comment = await Comment.findById(req.params.id);
-  comment.description = req.body.description;
-  await comment.save();
-  res.redirect(`/post/${comment.post}`);
-
+res.render('comment/index.ejs', { post, comments })
 }

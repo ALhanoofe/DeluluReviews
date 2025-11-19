@@ -1,11 +1,13 @@
 const Post = require("../models/post.js");
+const Comment = require("../models/comment");
+
 
 exports.post_index_get = async (req, res) => {
   const category = req.query.category;
   let posts;
   posts = await Post.find({ category }).populate('postOwner');
   const comments = await Comment.find().populate("postOwner");
-  res.render('post/index.ejs', { posts, category, comments });
+  res.render('post/index.ejs', { posts, category });
 }
 
 exports.post_create_get = async (req, res) => {
@@ -13,12 +15,16 @@ exports.post_create_get = async (req, res) => {
 
 }
 
-exports.post_create_post = async (req, res) => {
-  req.body.postOwner = req.session.user._id
-  await Post.create(req.body)
-  res.redirect('/post/?category=' + req.body.category);
-}
 
+exports.post_create_post = async (req, res) => {
+  req.body.postOwner = req.session.user._id;
+  if (req.file) {
+    req.body.image = req.file.filename;
+  }
+  await Post.create(req.body);
+  res.redirect('/post/?category=' + req.body.category);
+
+};
 
 exports.post_edit_get = async (req, res) => {
   const currentPost = await Post.findById(req.params.postId);
@@ -47,3 +53,4 @@ exports.post_delete_delete = async (req, res) => {
     res.send("You don't have permission to do that.");
   }
 }
+
