@@ -1,5 +1,5 @@
 <h1>Edit your profile</h1>
-<form action="/profile/<%= user._id %>?_method=PUT" method="POST">
+<form action="/profile/<%= user._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
   <label for="username">Username:</label>
   <input
     type="text"
@@ -23,7 +23,7 @@
 
   <label for="image">Your profile image:</label>
   <% if(user.image){ %>
-  <img src="<%= user.image %>" alt="Profile Image" width="100" />
+  <img src="/profiles/<%= user.image %>" alt="Profile Image" width="100" />
   <% } %>
   <input type="file" name="image" id="image" />
   <br />
