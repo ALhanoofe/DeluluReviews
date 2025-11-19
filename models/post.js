@@ -13,10 +13,7 @@ const postSchema = new mongoose.Schema({
     required: true,
     enum: ["Books", "Movies", "Dramas"],
   },
-  releaseDate: {
-    type: Date,
-    required: true,
-  },
+
   language: {
     type: String,
     required: true,
