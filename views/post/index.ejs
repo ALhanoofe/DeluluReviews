@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posts</title>
-  <link rel="stylesheet" href="/style/post.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts</title>
+    <link rel="stylesheet" href="/style/post.css" />
+  </head>
+  <body>
     <%- include('../partials/_navbar') %>
       <h1><%= category %></h1>
 <div class="posts-container">
@@ -49,14 +49,13 @@
       <% if (post.postOwner._id.equals(user._id)) { %>
         <div class="owner-container">
           <p>Owned by you</p>
+            <a href="comment/<%= post._id %>">view details</a>
           <a href="/post/<%= post._id %>/edit">Edit</a>
-          <form
-            action="/post/<%= post._id %>?_method=DELETE"
-            method="POST"
-          >
+          <form action="/post/<%= post._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete Post</button>
           </form>
         </div>
+      </div>
         <% } else { %>
         <p>Owned by <%= post.postOwner.username %></p>
         <button class="owner-container"><a href="">View details</a></button>
