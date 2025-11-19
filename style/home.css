@@ -5,7 +5,7 @@ body {
   padding: 0;
 }
 
-/* Center content under navbar */
+
 .content-wrapper {
   margin-top: 120px;
   display: flex;
@@ -14,7 +14,7 @@ body {
   align-items: center;
 }
 
-/* Style for category cards */
+
 .category-card {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
