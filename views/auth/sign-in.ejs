@@ -1,7 +1,8 @@
+<link rel="stylesheet" href="/style/signin.css">
 
-<h1>Sign In</h1>
 <form action="/auth/sign-in" method="POST">
-
+  <div class="main">
+ <h1>Sign In</h1>
   <label for="username">Username:</label>
   <input type="text" name="username" id="username" />
   <br />
@@ -9,7 +10,8 @@
   <label for="password">Password:</label>
   <input type="password" name="password" id="password" />
   <br />
-  
+
   <button type="submit">Sign In</button>
-  <p>You don't have an account? <a href="/sign-up.ejs">sign up</a></p>
+  <p>You don't have an account? <a href="sign-up.ejs">sign up</a></p>
+  </div>
 </form>
