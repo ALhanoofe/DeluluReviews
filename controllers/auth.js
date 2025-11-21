@@ -20,8 +20,7 @@ exports.auth_signup_post = async (req, res) => {
     req.body.image = req.file.filename;
   }
   const user = await User.create(req.body)
-
-  res.redirect('../views/index.ejs' + req.body.category);
+  res.render("auth/sign-in.ejs")
 
 }
 
