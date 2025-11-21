@@ -9,6 +9,8 @@
 </head>
 <body>
     <%- include('../partials/_navbar') %>
+
+
 <h1>Create New Post</h1>
 
 <form action="/post" method="POST" enctype="multipart/form-data">
@@ -48,6 +50,8 @@
     <option value="documentary">Documentary</option>
     <option value="animation">Animation</option>
   </select>
+
+
 
   <label for="image">Image URL</label>
   <input type="file" id="image" name="image" required>

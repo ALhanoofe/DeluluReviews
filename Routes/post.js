@@ -11,9 +11,6 @@ router.put('/:postId', upload.single('image'), postCtrl.post_update_put)
 router.delete('/:postId', postCtrl.post_delete_delete)
 
 
-
-
-
 module.exports = router
 
 
