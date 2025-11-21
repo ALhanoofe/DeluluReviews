@@ -47,9 +47,9 @@ const profileRouter = require("./Routes/post")
 const commentRouter = require("./Routes/comment")
 
 app.use('/auth', authRoutes);
-app.use('/profile',profileRouter);
-app.use('/post',postRouter)
-app.use('/comment',commentRouter);
+app.use('/profile', profileRouter);
+app.use('/post', postRouter)
+app.use('/comment', commentRouter);
 
 
 
