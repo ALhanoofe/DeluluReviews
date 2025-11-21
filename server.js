@@ -43,7 +43,7 @@ app.use(passUserToView)
 
 const authRoutes = require('./Routes/auth');
 const postRouter = require("./Routes/post.js")
-const profileRouter = require("./Routes/post")
+const profileRouter = require("./Routes/profile")
 const commentRouter = require("./Routes/comment")
 
 app.use('/auth', authRoutes);
