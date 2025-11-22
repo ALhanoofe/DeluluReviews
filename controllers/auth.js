@@ -41,14 +41,16 @@ exports.auth_signin_post = async (req, res) => {
   if (!ValidPassword) {
     return res.send("Login failed. please try again later")
   }
+
   req.session.user = {
     username: userInDatabase.username,
     _id: userInDatabase._id,
   }
   req.session.userId = userInDatabase._id;
 
-  res.render("../views/index.ejs")
+  res.redirect("/home")
 }
+
 
 exports.auth_signout_get = async (req, res) => {
   req.session.destroy()

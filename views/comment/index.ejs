@@ -19,9 +19,11 @@
           </div>
           <h3>Name: <%= post.name %></h3>
           <h3>Author: <%= post.author %></h3>
-          <h3>Release Date: <%= post.releaseDate %></h3>
           <h3>Post Owner: <%= post.postOwner.username %></h3>
+          <%if (post.comment){%>
           <h3>Cast: <%= post.cast %></h3>
+          <%}%>
+
           <h3>Rating: <%= post.rate %></h3>
           <h3>Review:
             <p>
