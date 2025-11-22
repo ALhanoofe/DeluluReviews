@@ -4,36 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link rel="stylesheet" href="/style/index.css">
+  <link rel="stylesheet" href="/style/home.css">
 </head>
+
 <body>
   <%- include('partials/_navbar') %>
-  
-<div class="main">
-  <div class="containar">
-  <div class="books">
-    <img src="/assets/book-open-svgrepo-com.svg" alt="books icon" width="100" height="100">
-    <img src="/assets/" alt="">
-    
-  </div>
-  <div class="movies">
-    <img src="/assets/movie-recorder-svgrepo-com.svg" alt="movie icon" width="100" height="100">
+
+  <h1>All Posts</h1>
+
+  <div class="posts-container">
+    <% posts.forEach((post) => { %>
+       <fieldset>
+        <legend><h3> <%= post.name %></h3></legend>
+
+      <div class="post-div">
+        <img 
+          src="/uploads/<%= post.image %>" 
+          alt="<%= post.name %>"
+        />
+
+        <h3>Author: <%= post.author %></h3>
+        <h3>Rating: <%= post.rate %></h3>
+
+        <div class="owner-container">
+          <a href="/comment/<%= post._id %>">View Details</a>
+        </div>
+      </div>
+</fieldset>
+    <% }) %>
+
   </div>
 
-  <div class="dramas">
-    <img src="/assets/drama-svgrepo-com.svg" alt="drama icon" width="100" height="100">
-  </div>
-</div>
-  <button>
-    <a href="/post/new">
-      + add new post
-    </button>
-
-</div>
 </body>
 </html>
-
-
-
-
-

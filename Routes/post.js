@@ -4,6 +4,7 @@ const upload = require('../middleware/upload.js');
 
 
 router.get('/', postCtrl.post_index_get)
+router.get('/home', postCtrl.home_index_get)
 router.get('/new', postCtrl.post_create_get)
 router.post('/', upload.single('image'), postCtrl.post_create_post)
 router.get('/:postId/edit', postCtrl.post_edit_get)

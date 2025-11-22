@@ -1,6 +1,7 @@
 const User = require("../models/user")
 const bcrypt = require("bcrypt")
 
+
 exports.auth_signup_get = async (req, res) => {
   res.render("auth/sign-up.ejs")
 }

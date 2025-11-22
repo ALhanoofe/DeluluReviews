@@ -1,35 +1,38 @@
 body {
-  margin: 0;
-  padding: 0;
+
+  font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #7c6b87, #e8d6eb);
   align-items: center;
 }
 
 .main {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  justify-content: center;
+  margin-top: 40px;
 }
 
-h1 {
+fieldset {
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(7px);
+  width: 50%;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+legend h1 {
   color: #3f3a41;
-  margin-top: 40px;
-  font-size: 32px;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 form {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-  padding: 30px;
-  border-radius: 10px;
-  width: 40%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-
+  gap: 18px;
 }
 
 form label {
@@ -40,19 +43,29 @@ form label {
 form input,
 form select,
 form textarea {
-  padding: 10px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 8px;
   border: 1px solid #b9a8c9;
+  background: rgba(255, 255, 255, 0.6);
   outline: none;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #4b4251;
+  box-shadow: 0 0 6px rgba(124, 107, 135, 0.4);
 }
 
 button {
-  padding: 10px;
+  padding: 12px;
   border: none;
   background: #5f5461;
   color: white;
-  font-size: 16px;
-  border-radius: 6px;
+  font-size: 17px;
+  border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -61,8 +74,8 @@ button:hover {
   background: #3f3643;
 }
 
-@media (max-width: 500px) {
-  form {
+@media (max-width: 600px) {
+  fieldset {
     width: 90%;
   }
 }

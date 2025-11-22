@@ -65,9 +65,10 @@ app.get('/sign-up.ejs', async (req, res) => {
 
 
 app.get('/home', async (req, res) => {
-  res.render('index.ejs');
+  const Post = require("./models/post.js");
+  const posts = await Post.find().populate("postOwner");
+  res.render('index.ejs', { posts });
 });
-
 
 
 app.listen(3000, () => {

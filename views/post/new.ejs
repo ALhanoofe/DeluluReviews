@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create New Post</title>
-  <link rel="stylesheet" href="/style/newpost.css">
-
+  <link rel="stylesheet" href="/style/newpost.css" />
 </head>
+
 <body>
-    <%- include('../partials/_navbar') %>
 
-<div class="main">
-<h1>Create New Post</h1>
+  <%- include('../partials/_navbar') %>
 
-<form action="/post" method="POST" enctype="multipart/form-data">
-  
-  <label for="name">Post Name</label>
-  <input type="text" id="name" name="name" required>
+  <div class="main">
+    <fieldset>
+      <legend><h1>Create New Post</h1></legend>
 
-  <label for="author">Author</label>
-  <input type="text" id="author" name="author">
+      <form action="/post" method="POST" enctype="multipart/form-data">
 
-  <label for="category">Category</label>
-  <select id="category" name="category" required>
-    <option value="Books">Book</option>
-    <option value="Movies">Movie</option>
-    <option value="Dramas">Drama</option>
-  </select>
+        <label for="name">Post Name</label>
+        <input type="text" id="name" name="name" required>
 
-<label for="language">Language</label>
-  <input type="text" id="language" name="language" placeholder="Language" required>
-  
-  <label for="type">Type</label>
-  <select id="type" name="type" required>
-    <option value="fiction">Fiction</option>
-    <option value="non-fiction">Non-fiction</option>
-    <option value="thriller">Thriller</option>
-    <option value="romance">Romance</option>
-    <option value="sci-fi">Sci-Fi</option>
-    <option value="fantasy">Fantasy</option>
-    <option value="biography">Biography</option>
-    <option value="history">History</option>
-    <option value="self-help">Self-help</option>
-    <option value="health">Health</option>
-    <option value="horror">Horror</option>
-    <option value="comedy">Comedy</option>
-    <option value="action">Action</option>
-    <option value="drama">Drama</option>
-    <option value="documentary">Documentary</option>
-    <option value="animation">Animation</option>
-  </select>
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author">
 
+        <label for="category">Category</label>
+        <select id="category" name="category" required>
+          <option value="Books">Book</option>
+          <option value="Movies">Movie</option>
+          <option value="Dramas">Drama</option>
+        </select>
 
+        <label for="language">Language</label>
+        <input type="text" id="language" name="language" placeholder="Language" required>
 
-  <label for="image">Image </label>
-  <input type="file" id="image" name="image" required>
+        <label for="type">Type</label>
+        <select id="type" name="type" required>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-fiction</option>
+          <option value="thriller">Thriller</option>
+          <option value="romance">Romance</option>
+          <option value="sci-fi">Sci-Fi</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="biography">Biography</option>
+          <option value="history">History</option>
+          <option value="self-help">Self-help</option>
+          <option value="health">Health</option>
+          <option value="horror">Horror</option>
+          <option value="comedy">Comedy</option>
+          <option value="action">Action</option>
+          <option value="drama">Drama</option>
+          <option value="documentary">Documentary</option>
+          <option value="animation">Animation</option>
+        </select>
 
-  <label for="cast">Cast (Optional)</label>
-  <input type="text" id="cast" name="cast">
+        <label for="image">Image</label>
+        <input type="file" id="image" name="image" required>
 
-  <label for="rate">Rating (1-5)</label>
-  <input type="number" id="rate" name="rate" min="1" max="5" required>
+        <label for="cast">Cast (Optional)</label>
+        <input type="text" id="cast" name="cast">
 
-  <label for="review">Review</label>
-  <textarea id="review" name="review" rows="5" required></textarea>
+        <label for="rate">Rating (1-5)</label>
+        <input type="number" id="rate" name="rate" min="1" max="5" required>
 
-  <button type="submit">Create Post</button>
-</form>
-</div>
+        <label for="review">Review</label>
+        <textarea id="review" name="review" rows="5" required></textarea>
+
+        <button type="submit">Create Post</button>
+      </form>
+
+    </fieldset>
+  </div>
+
 </body>
 </html>

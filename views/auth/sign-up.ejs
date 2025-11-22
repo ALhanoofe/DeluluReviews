@@ -3,44 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sign Up</title>
   <link rel="stylesheet" href="/style/signup.css">
 </head>
 <body>
-  
-<form action="/auth/sign-up" method="POST">
-<h1>Create a new account!</h1>
+  <div class="main">
+    <fieldset>
+      <legend><h1>Create a new account</h1></legend>
 
-  <label for="username">Username:</label>
-  <input type="text" name="username" id="username" />
-  <br />
+      <form action="/auth/sign-up" method="POST" enctype="multipart/form-data">
 
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name" />
-  <br />
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
 
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email" />
-  <br/>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
 
-  <label for="age">Age:</label>
-  <input type="number" name="age" id="age" />
-  <br />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
 
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password" />
-  <br />
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" required>
 
-  <label for="confirmPassword">Confirm Password:</label>
-  <input type="password" name="confirmPassword" id="confirmPassword" />
-  <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
 
-<label for="image">Image</label>
-  <input type="file" id="image" name="image" >
-<br />
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" required>
 
-  <button type="submit">Sign up</button>
-</form>
+        <label for="image">Profile Image:</label>
+        <input type="file" id="image" name="image">
 
+        <button type="submit">Sign Up</button>
+      </form>
+    </fieldset>
+  </div>
 </body>
 </html>
