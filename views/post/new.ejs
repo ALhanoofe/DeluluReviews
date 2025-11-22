@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create New Post</title>
-
+  <link rel="stylesheet" href="/style/newpost.css">
 
 </head>
 <body>
     <%- include('../partials/_navbar') %>
+
+<div class="main">
 <h1>Create New Post</h1>
 
 <form action="/post" method="POST" enctype="multipart/form-data">
@@ -26,7 +28,7 @@
     <option value="Dramas">Drama</option>
   </select>
 
-<label for="language"></label>
+<label for="language">Language</label>
   <input type="text" id="language" name="language" placeholder="Language" required>
   
   <label for="type">Type</label>
@@ -49,10 +51,12 @@
     <option value="animation">Animation</option>
   </select>
 
-  <label for="image">Image URL</label>
+
+
+  <label for="image">Image </label>
   <input type="file" id="image" name="image" required>
 
-  <label for="cast">Cast</label>
+  <label for="cast">Cast (Optional)</label>
   <input type="text" id="cast" name="cast">
 
   <label for="rate">Rating (1-5)</label>
@@ -63,6 +67,6 @@
 
   <button type="submit">Create Post</button>
 </form>
-
+</div>
 </body>
 </html>

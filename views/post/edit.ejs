@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Post</title>
+  <link rel="stylesheet" href="/style/post.css">
 </head>
 <body>
   <%- include('../partials/_navbar') %>
-
+<div class="mina">
 <h1 style="text-align:center;">Edit Post</h1>
 
 <form action="/post/<%= post._id %>?_method=PUT" method="POST"  enctype="multipart/form-data">
@@ -48,8 +49,7 @@
     <option value="animation" <%= post.type === 'animation' ? 'selected' : '' %>>Animation</option>
   </select>
 
-
-
+ 
   <label for="image">Image Update</label>
   <input type="file" id="image" name="image" >
 
@@ -68,6 +68,6 @@
     
   <button type="submit">Update Post</button>
 </form>
-
+</div>
 </body>
 </html>

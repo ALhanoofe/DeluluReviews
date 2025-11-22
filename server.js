@@ -35,21 +35,23 @@ app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60
+    }
   })
 );
-
 app.use(passUserToView)
 
 const authRoutes = require('./Routes/auth');
 const postRouter = require("./Routes/post.js")
-const profileRouter = require("./Routes/post")
+const profileRouter = require("./Routes/profile")
 const commentRouter = require("./Routes/comment")
 
 app.use('/auth', authRoutes);
-app.use('/profile',profileRouter);
-app.use('/post',postRouter)
-app.use('/comment',commentRouter);
+app.use('/profile', profileRouter);
+app.use('/post', postRouter)
+app.use('/comment', commentRouter);
 
 
 

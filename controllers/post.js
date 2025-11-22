@@ -1,12 +1,9 @@
 const Post = require("../models/post.js");
-const Comment = require("../models/comment");
-
 
 exports.post_index_get = async (req, res) => {
   const category = req.query.category;
   let posts;
   posts = await Post.find({ category }).populate('postOwner');
-  const comments = await Comment.find().populate("postOwner");
   res.render('post/index.ejs', { posts, category });
 }
 
@@ -59,4 +56,3 @@ exports.post_delete_delete = async (req, res) => {
     res.send("You don't have permission to do that.");
   }
 }
-

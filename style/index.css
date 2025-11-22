@@ -1,56 +1,82 @@
- body{
-      background-color: #c4b8c8;
-      color: #ffffff;
-    }
-    .books, .movies, .dramas {
-      width: 200px;
-      height: 350px;
-      background-color: #9d92a3;
-      border-radius: 30px;
-      padding: 20px;
-      margin: 20px;
-      text-align: center;
-      display: inline-block;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #7c6b87, #c9b5c9);
+  background-size: cover;
+}
 
-    p {
-      margin: 15px;
-      font-size: 50px ;
-      font-weight: 700;
-    }
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
 
-    button{
-      display: block;
-      height: 50px;
-      width: 200px;
-      border-radius: 20px;
-      border: 0 solid;
-      background-color:  #554a57;
-      color: white;
-      margin: 20px;
-      margin-left: 330px;
-    }
+}
 
-    button:hover{
-      display: block;
-      height: 50px;
-      width: 200px;
-      border-radius: 20px;
-      border: 0 solid;
-      background-color:  #554a57;
-      color: white;
-      margin: 20px;
-      margin-left: 330px;
-    }
+.part {
+  padding-top: 100px;
 
 
-    .new{
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+}
 
-    .new:hover {
-      color: #e3d0ff;
-      text-decoration: underline;
+.books,
+.movies,
+.dramas {
+  width: 400px;
+  height: 350px;
+  background-color: #9d92a3;
+  border-radius: 30px;
+  padding: 30px 20px 20px 20px;
+  margin: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+
+
+p {
+  margin: 15px;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+button {
+  display: block;
+  height: 50px;
+  width: 200px;
+  border-radius: 20px;
+  border: 0 solid;
+  background-color: #554a57;
+  color: white;
+  margin: 20px;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  display: block;
+  height: 50px;
+  width: 200px;
+  border-radius: 20px;
+  border: 0 solid;
+  background-color: #554a57;
+  color: white;
+  margin: 20px;
+}
+
+
+.new {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.new:hover {
+  color: #e3d0ff;
+  text-decoration: underline;
 }
