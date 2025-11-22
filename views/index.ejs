@@ -4,61 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <style>
-    body{
-      background-color: #AFA4B1;
-      color: #AFA4B1;
-    }
-    .books, .movies, .dramas {
-      width: 200px;
-      height: 350px;
-      background-color: rgb(139, 133, 143);
-      border-radius: 30px;
-      padding: 20px;
-      margin: 20px;
-      text-align: center;
-      display: inline-block;
-    }
-
-    p {
-      margin: 15px;
-      font-size: 50px ;
-      font-weight: 700;
-    }
-    button{
-      display: block;
-      height: 50px;
-      width: 200px;
-      border-radius: 20px;
-      border: 0 solid;
-      background-color:  #554a57;
-      color: white;
-      margin: 20px;
-      margin-left: 330px;
-    }
-  </style>
+  <link rel="stylesheet" href="/style/index.css">
 </head>
 <body>
-  <%- include('./partials/_navbar') %>
-  <img src="" alt="">
+  <%- include('partials/_navbar') %>
+  
+<div class="main">
+  <div class="containar">
   <div class="books">
     <img src="/assets/book-open-svgrepo-com.svg" alt="books icon" width="100" height="100">
-    <p>Books</p>
+    <img src="/assets/" alt="">
+    
   </div>
   <div class="movies">
     <img src="/assets/movie-recorder-svgrepo-com.svg" alt="movie icon" width="100" height="100">
-    <p>Movies</p>
-  </div>
-  <div class="dramas">
-    <img src="/assets/drama-svgrepo-com.svg" alt="drama icon" width="100" height="100">
-    <p>Dramas</p>
   </div>
 
+  <div class="dramas">
+    <img src="/assets/drama-svgrepo-com.svg" alt="drama icon" width="100" height="100">
+  </div>
+</div>
   <button>
     <a href="/post/new">
       + add new post
     </button>
 
+</div>
 </body>
 </html>
 

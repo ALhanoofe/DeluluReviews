@@ -1,26 +1,38 @@
-
 nav {
-  width: 100%;
   color: #ffffff;
   font-family: Arial, sans-serif;
   box-shadow: 0 2px 5px rgba(197, 193, 198, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
-}
+  background: linear-gradient(135deg, #7c6b87, #8f7793);
 
+}
 
 .landing-header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
 }
 
-
 .logo-container img {
   display: block;
-  max-height: 100px;
+  min-height: 100px;
+}
+
+.logo-container {
+  display: flex;
+  gap: 10px;
+
+}
+
+.right-header {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .right-header a {

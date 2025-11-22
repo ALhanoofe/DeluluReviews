@@ -4,10 +4,16 @@ const User = require("../models/user")
 //API's
 
 exports.profile_index_get = async (req, res) => {
-  const currentUser = await User.findById(req.session.userId)
+  const currentUser = await User.findById(req.session.userId);
 
-  res.render("profile/index.ejs", { user: currentUser })
-}
+  if (!currentUser) {
+    return res.status(404).send("User not found");
+  }
+
+  res.render("profile/index.ejs", { user: currentUser });
+
+};
+
 
 exports.profile_show_get = async (req, res) => {
   const currentUser = await User.findById(req.session.userId)
@@ -26,7 +32,7 @@ exports.profile_update_put = async (req, res) => {
   if (req.file) {
     req.body.image = req.file.filename;
   }
-  await currentPost.updateOne(req.body);
+  await currentUser.updateOne(req.body);
   res.redirect("/profile/index.ejs")
 }
 

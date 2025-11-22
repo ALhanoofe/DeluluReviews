@@ -4,32 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
+    <link rel="stylesheet" href="/style/profile.css" />
   </head>
   <body>
+        <%- include('../partials/_navbar') %>
+<div class="main">
     <h1>Your Profile</h1>
-
-
-  <form action="/profile/<%= user._id %>?_method=PUT" method="POST"  enctype="multipart/form-data">
-    
+<% if(user) {%>
+    <form action="/profile/<%= user._id %>?_method=PUT" method="POST"  enctype="multipart/form-data">
       <img src="/profiles/<%= user.image %>" width="150" alt="Profile Image" />
-
       <br />
-
       <p>Username: <%= user.username %></p>
       <br />
-
       <p>Name: <%= user.name %></p>
       <br />
-
       <p>Email: <%= user.email %></p>
       <br />
-
       <p>Age: <%= user.age %></p>
       <br />
-
       <button>
         <a href="/profile/<%= user._id %>/edit">Update Profile</a>
       </button>
-  </form>
+   </form>
+<% } else { %>
+  <p>User not found ,Please login again.</p>
+<% } %>
+  </div>
   </body>
 </html>
