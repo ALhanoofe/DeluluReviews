@@ -70,7 +70,6 @@
           <% } %>
         </div>
         <% } %> <% }) %>
-      </div>
 
         <!-- Movies -->
     <div class="posts-container">
@@ -87,21 +86,23 @@
           <h3>Post Owner: <%= post.postOwner.username %></h3>
           <h3>Rating: <%= post.rate %></h3>
           <p>Review: <%= post.review %></p>
-<% if (post.postOwner && user && post.postOwner._id.equals(user._id)) { %>
-          <div class="owner-container">
-            <p>Owned by you</p>
-           <a href="comment/<%= post._id %>" class="owner-container">view details</a>
-            <a href="/post/<%= post._id %>/edit">Edit</a>
-            <a href="/post/<%= post._id %>?_method=DELETE"><button type="submit">Delete Post</button></a>
-        
-          </div>
-          <% } else { %>
-          <p>Owned by <%= post.postOwner.username %></p>
-        <a href="comment/<%= post._id %>" class="owner-container">view details</a>
-          <% } %>
+
+        <% if (post.postOwner._id.equals(user._id)) { %>
+        <div class="owner-container">
+          <p>Owned by you</p>
+            <a href="comment/<%= post._id %>">view details</a>
+          <a href="/post/<%= post._id %>/edit">Edit</a>
+          <form action="/post/<%= post._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Post</button>
+          </form>
         </div>
-        <% } %> <% }) %>
       </div>
-  </div>
+        <% } else { %>
+        <p>Owned by <%= post.postOwner.username %></p>
+        <a href="comment/<%= post._id %>" class="owner-container">view details</a>
+
+        <% } %> <% } %> <% }) %>
+      </div>
+
   </body>
 </html>
