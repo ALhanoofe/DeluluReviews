@@ -6,6 +6,15 @@ exports.post_index_get = async (req, res) => {
   posts = await Post.find({ category }).populate('postOwner');
   res.render('post/index.ejs', { posts, category });
 }
+exports.home_index_get = async (req, res) => {
+  const posts = await Post.find()
+  res.render("/home", { posts })
+}
+
+
+
+
+
 
 exports.post_create_get = async (req, res) => {
   res.render('post/new.ejs');
