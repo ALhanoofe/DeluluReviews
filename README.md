@@ -18,12 +18,17 @@ Books , movies and drama reviews application.
 ## App wireframe
 ![App wireframe](figma)
 
-## Unsolved problems
-- [ ] problem 1
-- [ ] problem 2
-- [ ] problem 3
+## Devloyment Link
+[DeluluReviews](https://trello.com/invite/b/690a376cea612604feb74497/ATTI53c640007a9448aab2df56ab79ad9086F460E9F7/project2-delulu-reviews)
 
 
 ## Future enhancements
+* Add a search bar.
+* Add a filter for catgory.
+* Add a like just like instgram.
+* Edit and delete the comments.
+* Reply to the comments.
 
-## ***Credits***
+## Technologies used
+* JavaScript.
+* Multer.
