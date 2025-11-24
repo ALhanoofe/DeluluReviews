@@ -11,11 +11,6 @@ exports.home_index_get = async (req, res) => {
   res.render("/home", { posts })
 }
 
-
-
-
-
-
 exports.post_create_get = async (req, res) => {
   res.render('post/new.ejs');
 

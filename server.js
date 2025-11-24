@@ -1,4 +1,3 @@
-//dotenv means to hide sensitive info like passwords
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -18,14 +17,12 @@ const isSignedIn = require("./middleware/is-signed-in")
 
 mongoose.connect(process.env.MONGODB_URI)
 mongoose.connection.once("connected", () => {
-  console.log("connected to mongo");
 })
 
-//extended mean we receive same data
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
-app.use('/assets', express.static(__dirname + '/assets'));
+app.use('/public', express.static(__dirname + '/public'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use('/profiles', express.static(__dirname + '/profiles'));
 
@@ -49,9 +46,9 @@ const profileRouter = require("./Routes/profile")
 const commentRouter = require("./Routes/comment")
 
 app.use('/auth', authRoutes);
-app.use('/profile', profileRouter);
-app.use('/post', postRouter)
-app.use('/comment', commentRouter);
+app.use('/profile', isSignedIn, profileRouter);
+app.use('/post', isSignedIn, postRouter)
+app.use('/comment', isSignedIn, commentRouter);
 
 
 
@@ -64,7 +61,7 @@ app.get('/sign-up.ejs', async (req, res) => {
 });
 
 
-app.get('/home', async (req, res) => {
+app.get('/home', isSignedIn, async (req, res) => {
   const Post = require("./models/post.js");
   const posts = await Post.find().populate("postOwner");
   res.render('index.ejs', { posts });
@@ -72,6 +69,5 @@ app.get('/home', async (req, res) => {
 
 
 app.listen(3000, () => {
-  console.log('listening on port 3000');
 
 })
