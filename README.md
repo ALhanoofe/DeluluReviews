@@ -16,7 +16,7 @@ Books , movies and drama reviews application.
    [Trello Board](https://trello.com/invite/b/690a376cea612604feb74497/ATTI53c640007a9448aab2df56ab79ad9086F460E9F7/project2-delulu-reviews)
 
 ## App wireframe
-![App wireframe](figma)
+https://www.figma.com/site/4Tuzg36tcn8dLm5cvchOJW/Untitled?node-id=0-1&p=f&t=xcnQbnQ1uVM5H8qj-0
 
 ## Deployment  Link
 [DeluluReviews](https://delulureviews.onrender.com)
